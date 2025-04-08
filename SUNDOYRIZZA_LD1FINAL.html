@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form with 60 Seconds Lockout</title>
+    <style>
+    
+        body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #fa53d0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        
+        .login-container {
+            background-color: #f77edc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0f0e0f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f55ee1;
+        }
+
+        
+        .error-message {
+            color: rgb(29, 27, 27);
+            font-size: 14px;
+            display: none;
+        }
+
+        
+        #lockout-message {
+            font-weight: bold;
+            color: #d83f3d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            
+            <button type="submit" id="login-button">Login</button>
+            <p id="lockout-message" class="error-message" style="display: none;">Invalid username or password. Please wait 10 seconds.</p>
+        </form>
+    </div>
+
+    <script>
+        let attemptCount = 0;
+        let lockoutTimer;
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+           
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            
+            const correctUsername = 'admin123';
+            const correctPassword = 'admin123';
+
+            
+            if (attemptCount >= 1) {
+                
+                document.getElementById('login-button').disabled = true;
+                document.getElementById('lockout-message').style.display = 'block';
+                
+               
+                lockoutTimer = setTimeout(() => {
+                    attemptCount = 0;  
+                    document.getElementById('login-button').disabled = false;
+                    document.getElementById('lockout-message').style.display = 'none';
+                }, 10000); 
+                
+                return; 
+            }
+
+            if (username === correctUsername && password === correctPassword) {
+                
+                alert('Login successful!');
+                
+                
+                 window.location.href = 'file:///D:/RIZZAMAESUNDOY_LD2%20WST2/Home.html';  
+            } else {
+                
+                attemptCount++;
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

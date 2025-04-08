@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Lives</title>
+    <link rel="stylesheet" href="STYLE.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Saving Lives</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showContent('home')">Home</a></li>
+                <li><a href="#" onclick="showContent('projects')">Our Projects</a></li>
+                <li><a href="#" onclick="showContent('involved')">Get Involved</a></li>
+                <li><a href="#" onclick="showContent('about')">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       
+        <div id="home" class="content">
+            
+            <p><a href="#" onclick="toggleContent('success-stories')">Success Stories / Events</a></p>
+            <p><a href="#" onclick="toggleContent('saving-numbers')">Saving Lives in Numbers</a></p>
+        </div>
+        <div id="success-stories" class="nested-content">Success Stories / Events Details</div>
+        <div id="saving-numbers" class="nested-content">Saving Lives in Numbers Details</div>
+
+       
+        <div id="projects" class="content">
+            
+            <p><a href="#" onclick="toggleContent('ongoing-projects')">Ongoing Projects</a></p>
+        </div>
+        <div id="ongoing-projects" class="nested-content">
+            <p><a href="#" onclick="toggleContent('food-assistance')">Food Assistance</a></p>
+            <p><a href="#" onclick="toggleContent('emergency-relief')">Emergency Relief</a></p>
+            <p><a href="#" onclick="toggleContent('school-program')">School-Based Program</a></p>
+        </div>
+        <div id="food-assistance" class="nested-content">Food Assistance Program Details</div>
+        <div id="emergency-relief" class="nested-content">Emergency Relief Program Details</div>
+        <div id="school-program" class="nested-content">School-Based Program Details</div>
+
+        
+        <div id="involved" class="content">
+            
+            <p><a href="#" onclick="toggleContent('volunteer')">Volunteer</a></p>
+            <p><a href="#" onclick="toggleContent('donate')">Donate</a></p>
+        </div>
+
+        <div id="volunteer" class="nested-content">
+            <p><a href="#" onclick="toggleContent('individual')">Individual</a></p>
+            <p><a href="#" onclick="toggleContent('partnership')">Partnership</a></p>
+        </div>
+        <div id="individual" class="nested-content">Volunteer as an Individual</div>
+        <div id="partnership" class="nested-content">Volunteer as a Partnership</div>
+
+        <div id="donate" class="nested-content">
+            <p><a href="#" onclick="toggleContent('give-monthly')">Give Monthly</a></p>
+            <p><a href="#" onclick="toggleContent('give-once')">Give Once</a></p>
+        </div>
+
+        <div id="give-monthly" class="nested-content">
+            <p><a href="#" onclick="showContent('donation-form')">Your Contact Details</a></p>
+        </div>
+
+        <div id="give-once" class="nested-content">
+            <p><a href="#" onclick="showContent('donation-form')">Your Contact Details</a></p>
+        </div>
+
+      
+        <div id="about" class="content">
+            
+            <p><a href="#" onclick="toggleContent('history')">History</a></p>
+            <p><a href="#" onclick="toggleContent('contact-us')">Contact Us</a></p>
+        </div>
+        <div id="history" class="nested-content">Our History</div>
+        <div id="contact-us" class="nested-content">
+            <p>Facebook: <a href="https://facebook.com" target="_blank">Visit our page</a></p>
+            <p>Phone: +1234567890</p>
+        </div>
+
+        
+        <div id="donation-form" class="content">
+            <h2>Donation Form</h2>
+            <form>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+
+                <label for="amount">Donation Amount:</label>
+                <input type="number" id="amount" required>
+
+                <label for="message">Private Message:</label>
+                <textarea id="message"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Saving Lives | Program By: Rizza Mae M. Sundoy</p>
+    </footer>
+
+</body>
+</html>
+
